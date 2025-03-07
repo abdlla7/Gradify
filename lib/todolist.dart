@@ -68,9 +68,8 @@ class _TodolistState extends State<Todolist> {
               ),
               child: InkWell(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('You clicked: ${toDoList[index]}')),
-                  );
+                  taskCompleted[index] = !taskCompleted[index];
+                  _saveTasks();
                 },
                 borderRadius: BorderRadius.circular(10),
                 child: Row(
